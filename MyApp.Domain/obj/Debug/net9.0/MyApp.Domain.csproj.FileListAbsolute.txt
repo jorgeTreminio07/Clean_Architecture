@@ -1,0 +1,12 @@
+F:\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.deps.json
+F:\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.dll
+F:\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.pdb
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.AssemblyReference.cache
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfoInputs.cache
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfo.cs
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.CoreCompileInputs.cache
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.dll
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\refint\MyApp.Domain.dll
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.pdb
+F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\ref\MyApp.Domain.dll

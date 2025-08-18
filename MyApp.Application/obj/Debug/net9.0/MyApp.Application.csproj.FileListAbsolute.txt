@@ -1,0 +1,15 @@
+F:\MyApp.Api\MyApp.Application\bin\Debug\net9.0\MyApp.Application.deps.json
+F:\MyApp.Api\MyApp.Application\bin\Debug\net9.0\MyApp.Application.dll
+F:\MyApp.Api\MyApp.Application\bin\Debug\net9.0\MyApp.Application.pdb
+F:\MyApp.Api\MyApp.Application\bin\Debug\net9.0\MyApp.Domain.dll
+F:\MyApp.Api\MyApp.Application\bin\Debug\net9.0\MyApp.Domain.pdb
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.csproj.AssemblyReference.cache
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.AssemblyInfoInputs.cache
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.AssemblyInfo.cs
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.csproj.CoreCompileInputs.cache
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Ap.B540CA8A.Up2Date
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.dll
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\refint\MyApp.Application.dll
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\MyApp.Application.pdb
+F:\MyApp.Api\MyApp.Application\obj\Debug\net9.0\ref\MyApp.Application.dll
