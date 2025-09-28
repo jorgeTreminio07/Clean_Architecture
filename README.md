@@ -68,6 +68,7 @@ A **Clean Architecture** Web API template for developers who want to speed up de
 2. Add your database connection string in:
    app.development.json
    Example:
+   
    ```bash
    {
     "ConnectionStrings": {
@@ -75,10 +76,9 @@ A **Clean Architecture** Web API template for developers who want to speed up de
     }
    }
 
-3. Make sure PostgreSQL commands (pg_dump, psql, etc.) are added to your system PATH for backup support.
+4. Make sure PostgreSQL commands (pg_dump, psql, etc.) are added to your system PATH for backup support.
 
-4. ▶️ Running the API
+5. ▶️ Running the API
 
-Example:
   ```bash
   dotnet run --project MyApp.Api
