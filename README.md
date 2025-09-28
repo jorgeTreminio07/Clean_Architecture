@@ -10,7 +10,7 @@
 ![MediatR](https://img.shields.io/badge/MediatR-FF6C37?style=for-the-badge&logo=nuget&logoColor=white)
 ![AutoMapper](https://img.shields.io/badge/AutoMapper-FF5733?style=for-the-badge&logo=nuget&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
-![BCrypt](https://img.shields.io/badge/BCrypt-00BFFF?style=for-the-badge&logo=lock&logoColor=white)
+![BCrypt](https://img.shields.io/badge/BCrypt-00BFFF?style=for-the-badge&logo=nuget&logoColor=white)
 ![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-4CAF50?style=for-the-badge&logo=lock&logoColor=white)
 ![CQRS](https://img.shields.io/badge/CQRS-FF9800?style=for-the-badge&logo=databricks&logoColor=white)
 ![Redis Ready](https://img.shields.io/badge/Cache%20Ready%20(Redis)-DC382D?style=for-the-badge&logo=redis&logoColor=white)
