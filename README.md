@@ -1,7 +1,7 @@
 # Clean Architecture Web API Template - ASP.NET Core 9
-##👤 Author
-Jorge Eduardo Treminio Cruz
-📧 Email: eduardotreminio10@gmail.com
+## 👤 Author
+- Jorge Eduardo Treminio Cruz
+- 📧 Email: eduardotreminio10@gmail.com
 
 ![.NET](https://img.shields.io/badge/.NET%209-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
