@@ -29,12 +29,50 @@ builder.Services.AddSwaggerGen(opciones =>
     opciones.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Version = "v1",
-        Title = "Plantilla Clean Architecture",
-        Description = "Plantilla Web API aplicando Clean Architecture para desarrolladores que no quieren reinventar la rueda y agilizar el desarrollo de sus proyectos, La API Posee Autenticacion con JWT Bearer, Crud Usuarios, Crud Roles, Permisos de Roles, Crud Bakups(Se guardan en archivos local), Manejo de Caché (puedes migrar a redis), Almacenamiento de Archivos de forma local.",
+        Title = "Plantilla Web API Clean Architecture ASP.NET Core 9",
+        Description = @"Plantilla Web API aplicando Clean Architecture para desarrolladores que no quieren reinventar la rueda y agilizar el desarrollo de sus proyectos.
+
+        **Características:**
+        - Autenticación con JWT Bearer
+        - Hash de contraseñas
+        - CRUD de Usuarios
+        - CRUD de Roles
+        - Permisos de Roles
+        - CRUD de Backups (archivos locales)
+        - Manejo de Caché (puedes migrar a Redis)
+        - Almacenamiento de Archivos local.
+
+        - Endpoints de pruebas:
+          -Relacion muchos a muchos: Estudiantes - Clases
+          -Relacion uno a muchos: Employees - Offices.
+          
+        -Aplicacion de Patrones de diseño:
+          - CQRS
+          - Mediator
+          - Repository
+          - Specification
+          - Dependency Injection.
+          
+        -Uso de librerias:
+          -MediatR
+          -AutoMapper
+          -Ardalis.Result
+          -Ardalis.Specification
+          -Bcrypt.
+
+        -Base de Datos PostgreSQL
+        -Entity Framework Core
+        -Fluent api.
+
+        - Uso de CORS
+        
+        **Contacto:** 
+        eduardotreminio10@gmail.com",
+
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
-            Email = "eduardotreminio10@gmail.com",
-            Name = "Jorge Eduardo Treminio Cruz",
+            // Email = "eduardotreminio10@gmail.com",
+            // Name = "Jorge Eduardo Treminio Cruz",
         }
     });
 
@@ -50,8 +88,6 @@ builder.Services.AddSwaggerGen(opciones =>
 
     opciones.OperationFilter<FiltroAutorizacion>();
 });
-
-
 
 
 //configuracion cors
