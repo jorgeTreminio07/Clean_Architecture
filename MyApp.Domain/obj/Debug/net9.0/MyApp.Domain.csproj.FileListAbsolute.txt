@@ -10,3 +10,16 @@ F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.dll
 F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\refint\MyApp.Domain.dll
 F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.pdb
 F:\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\ref\MyApp.Domain.dll
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.deps.json
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.dll
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\bin\Debug\net9.0\MyApp.Domain.pdb
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.AssemblyReference.cache
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfoInputs.cache
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.AssemblyInfo.cs
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.csproj.CoreCompileInputs.cache
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.sourcelink.json
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.dll
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\refint\MyApp.Domain.dll
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\MyApp.Domain.pdb
+D:\desarrollo web\Backend\.Net\MyApp.Api\MyApp.Domain\obj\Debug\net9.0\ref\MyApp.Domain.dll
