@@ -1,5 +1,6 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
@@ -24,7 +25,8 @@ namespace MyApp.Api.Controllers
             this._outputCacheStore = outputCacheStore;
         }
 
-        [HttpGet("{id:Guid}", Name ="GetUserById")]
+        [HttpGet("{id:Guid}", Name = "GetUserById")]
+        [Authorize(Policy = "GetUserById")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var command = new GetUserByIdQuery(id);
@@ -39,11 +41,12 @@ namespace MyApp.Api.Controllers
 
         [HttpGet]
         [OutputCache(Tags = [cache])]
+        [Authorize(Policy = "GetUser")]
         public async Task<IActionResult> Get()
         {
             var command = new GetAllUsersQuery();
             var result = await _mediator.Send(command);
-            if(result.Status == ResultStatus.NotFound)
+            if (result.Status == ResultStatus.NotFound)
             {
                 return NotFound(result.Errors);
             }
@@ -52,11 +55,12 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPost("Register")]
+        [Authorize(Policy = "RegisterUser")]
         public async Task<IActionResult> Post([FromForm] AddUserReqDto dto)
         {
             var command = new AddUserCommand(dto.Name, dto.Email, dto.Password, dto.RolId, dto.Avatar);
             var result = await _mediator.Send(command);
-            
+
             if (result.Status == ResultStatus.Invalid)
             {
                 return NotFound(result.ValidationErrors);
@@ -74,7 +78,9 @@ namespace MyApp.Api.Controllers
             });
         }
 
+
         [HttpPost("Login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginReqDto dto)
         {
             var command = new LoginUserCommand(dto.Email, dto.Password);
@@ -94,9 +100,10 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPut("Update")]
+        [Authorize(Policy = "UpdateUser")]
         public async Task<IActionResult> Update([FromForm] UpdateUserReqDto dto)
         {
-            var command = new UpdateUserCommand(dto.Id,dto.Name, dto.Email, dto.Password, dto.RolId, dto.Avatar);
+            var command = new UpdateUserCommand(dto.Id, dto.Name, dto.Email, dto.Password, dto.RolId, dto.Avatar);
             var result = await _mediator.Send(command);
 
             if (result.Status == ResultStatus.Invalid)
@@ -114,9 +121,9 @@ namespace MyApp.Api.Controllers
             return Ok(result.Value);
         }
 
-        
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Policy = "DeleteUser")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var command = new DeleteUserCommand(id);

@@ -1,5 +1,6 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Commands.Backups;
@@ -20,6 +21,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "GetBackup")]
         public async Task<IActionResult> Get()
         {
             var query = new GetAllBackupsQuery();
@@ -29,13 +31,14 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.Errors);
             }
-            
+
             return Ok(result.Value);
 
         }
 
 
         [HttpPost]
+        [Authorize(Policy = "PostBackup")]
         public async Task<IActionResult> Post()
         {
             var result = await _mediator.Send(new AddBackupCommand());
@@ -43,7 +46,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
-            
+
             return Ok(result.Value);
             //return CreatedAtRoute("GetClaseById", new { Id = result.Value.Id }, new
             //{
@@ -52,6 +55,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPost("{id:Guid}")]
+        [Authorize(Policy = "RestoreBackup")]
         public async Task<IActionResult> Restore([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new RestoreBackupCommand(id));
@@ -69,6 +73,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Policy = "DeleteBackup")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new DeleteBackupCommand(id));

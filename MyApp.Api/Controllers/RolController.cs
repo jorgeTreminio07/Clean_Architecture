@@ -24,6 +24,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "GetRol")]
         public async Task<IActionResult> Get()
         {
             var result = await _mediator.Send(new GetAllRolQuery());
@@ -35,6 +36,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "PostRol")]
         public async Task<IActionResult> Post([FromBody] RolReqDto dto)
         {
             var command = new AddRolCommand(dto.Name, dto.Description, dto.NamesPermisos);
@@ -47,9 +49,10 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPut]
+        [Authorize(Policy = "UpdateRol")]
         public async Task<IActionResult> Put([FromBody] UpdateRolReqDto dto)
         {
-            var command = new UpdateRolCommand(dto.Id,dto.Name, dto.Description, dto.NamesPermisos);
+            var command = new UpdateRolCommand(dto.Id, dto.Name, dto.Description, dto.NamesPermisos);
             var result = await _mediator.Send(command);
             if (result.Status == ResultStatus.Invalid)
             {
@@ -59,6 +62,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Policy = "DeleteRol")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var command = new DeleteRolCommand(id);

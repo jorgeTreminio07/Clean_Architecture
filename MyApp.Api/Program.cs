@@ -52,18 +52,7 @@ builder.Services.AddSwaggerGen(opciones =>
 });
 
 
-//autenticacion
-builder.Services.AddAuthorization(opciones =>
-{
-    opciones.AddPolicy("PostOffice", policy =>
-        policy.Requirements.Add(new PermissionRequirement("PostOffice")));
-    opciones.AddPolicy("DeleteOffice", policy =>
-        policy.Requirements.Add(new PermissionRequirement("DeleteOffice")));
-    opciones.AddPolicy("GetOffice", policy =>
-        policy.Requirements.Add(new PermissionRequirement("GetOffice")));
-    opciones.AddPolicy("UpdateOffice", policy =>
-        policy.Requirements.Add(new PermissionRequirement("UpdateOffice")));
-});
+
 
 //configuracion cors
 builder.Services.AddCors(options =>

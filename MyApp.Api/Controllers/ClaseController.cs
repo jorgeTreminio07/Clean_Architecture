@@ -1,5 +1,6 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,7 @@ namespace MyApp.Api.Controllers
 
 
         [HttpGet("{id:Guid}", Name = "GetClaseById")]
+        [Authorize(Policy = "GetClaseById")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetClaseByIdQuery(id));
@@ -33,6 +35,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "GetClase")]
         public async Task<IActionResult> Get()
         {
             var result = await _mediator.Send(new GetAllClasesQuery());
@@ -45,23 +48,25 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "PostClase")]
         public async Task<IActionResult> Post([FromBody] AddClaseReqDto dto)
         {
             var result = await _mediator.Send(new AddClaseCommand(dto.Name, dto.EstudiantesId));
-            if(result.Status == ResultStatus.Invalid)
+            if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
             }
-            return CreatedAtRoute("GetClaseById", new { Id = result.Value.Id}, new
-            { 
+            return CreatedAtRoute("GetClaseById", new { Id = result.Value.Id }, new
+            {
                 Clase = result.Value,
             });
         }
 
         [HttpPut]
+        [Authorize(Policy = "UpdateClase")]
         public async Task<IActionResult> Put([FromBody] UpdateClaseReqDto dto)
         {
-            var result = await _mediator.Send(new UpdateClaseCommand(dto.Id,dto.Name, dto.EstudiantesId));
+            var result = await _mediator.Send(new UpdateClaseCommand(dto.Id, dto.Name, dto.EstudiantesId));
             if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
@@ -71,10 +76,11 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Policy = "DeleteClase")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new DeleteClaseCommand(id));
-            if(result.Status == ResultStatus.Invalid)
+            if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
             }

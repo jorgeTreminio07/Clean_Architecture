@@ -1,5 +1,6 @@
 ﻿using Ardalis.Result;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +22,12 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet("{id:Guid}", Name = "GetEmployeeById")]
+        [Authorize(Policy = "GetEmployeeById")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetEmployeeByIdQuery(id));
 
-            if(result.Status == ResultStatus.NotFound)
+            if (result.Status == ResultStatus.NotFound)
             {
                 return NotFound(result.Errors);
             }
@@ -34,6 +36,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "GetEmployees")]
         public async Task<IActionResult> Get()
         {
             var result = await _mediator.Send(new GetAllEmpployeesQuery());
@@ -45,10 +48,11 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "PostEmployee")]
         public async Task<IActionResult> Post([FromBody] EmployeeReqDto dto)
         {
-            var result = await _mediator.Send(new AddEmployeeCommand(dto.Name, dto.Email,dto.Phone, dto.OfficeId));
-            if(result.Status == ResultStatus.Invalid)
+            var result = await _mediator.Send(new AddEmployeeCommand(dto.Name, dto.Email, dto.Phone, dto.OfficeId));
+            if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
             }
@@ -59,10 +63,11 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpPut]
+        [Authorize(Policy = "UpdateEmployee")]
         public async Task<IActionResult> Put([FromBody] UpdateEmployeeReqDto dto)
         {
-            var result = await _mediator.Send(new UpdateEmployeeCommand(dto.Id, dto.Name, dto.Email,dto.Phone, dto.OfficeId));
-            if(result.Status == ResultStatus.Invalid)
+            var result = await _mediator.Send(new UpdateEmployeeCommand(dto.Id, dto.Name, dto.Email, dto.Phone, dto.OfficeId));
+            if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
             }
@@ -71,16 +76,17 @@ namespace MyApp.Api.Controllers
             {
                 return NotFound(result.Errors); // muestra el error del catch en el CommandHandler
             }
-            
+
             return Ok(result.Value);
         }
 
         [HttpDelete("{id:Guid}")]
+        [Authorize(Policy = "DeleteEmployee")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new DeleteEmployeeCommand(id));
 
-            if(result.Status == ResultStatus.Invalid)
+            if (result.Status == ResultStatus.Invalid)
             {
                 return BadRequest(result.ValidationErrors);
             }

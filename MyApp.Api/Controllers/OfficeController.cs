@@ -21,10 +21,11 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet("{id:Guid}", Name = "GetOfficeById")]
+        [Authorize(Policy = "GetOfficeById")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var result = await _mediator.Send(new GetOfficeByIdQuery(id));
-            if(result.Status == ResultStatus.NotFound)
+            if (result.Status == ResultStatus.NotFound)
             {
                 return NotFound(result.Errors);
             }
@@ -65,7 +66,7 @@ namespace MyApp.Api.Controllers
         [Authorize(Policy = "UpdateOffice")]
         public async Task<IActionResult> Put([FromBody] UpdateOfficeReqDto dto)
         {
-            var result = await _mediator.Send(new UpdateOfficeCommand(dto.Id,dto.Name));
+            var result = await _mediator.Send(new UpdateOfficeCommand(dto.Id, dto.Name));
 
             if (result.Status == ResultStatus.Invalid)
             {
