@@ -6,7 +6,6 @@ Jorge Eduardo Treminio Cruz
 ![.NET](https://img.shields.io/badge/.NET%209-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Entity Framework Core](https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=nuget&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 A **Clean Architecture** Web API template for developers who want to speed up development without reinventing the wheel.
 
@@ -76,7 +75,6 @@ A **Clean Architecture** Web API template for developers who want to speed up de
     }
    }
 
-
 3. Make sure PostgreSQL commands (pg_dump, psql, etc.) are added to your system PATH for backup support.
 
 4. ▶️ Running the API
@@ -84,32 +82,3 @@ A **Clean Architecture** Web API template for developers who want to speed up de
 Example:
   ```bash
   dotnet run --project MyApp.Api
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
