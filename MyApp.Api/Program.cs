@@ -66,6 +66,8 @@ builder.Services.AddSwaggerGen(opciones =>
 
         - Uso de CORS
         
+        **Autor:** 
+        Jorge Eduardo Treminio Cruz
         **Contacto:** 
         eduardotreminio10@gmail.com",
 
