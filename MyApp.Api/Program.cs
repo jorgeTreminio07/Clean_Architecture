@@ -49,21 +49,6 @@ builder.Services.AddSwaggerGen(opciones =>
     });
 
     opciones.OperationFilter<FiltroAutorizacion>();
-
-    // opciones.AddSecurityRequirement(new OpenApiSecurityRequirement
-    // {
-    //    {
-    //        new OpenApiSecurityScheme
-    //        {
-    //            Reference = new OpenApiReference
-    //            {
-    //                Type = ReferenceType.SecurityScheme,
-    //                Id = "Bearer"
-    //            }
-    //        },
-    //        new string[]{}
-    //    }
-    // });
 });
 
 
