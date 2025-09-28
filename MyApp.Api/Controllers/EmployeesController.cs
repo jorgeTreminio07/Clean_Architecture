@@ -21,9 +21,10 @@ namespace MyApp.Api.Controllers
 
         private const string Cache = "obtener-employees";
 
-        public EmployeesController(IMediator mediator)
+        public EmployeesController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
         [HttpGet("{id:Guid}", Name = "GetEmployeeById")]
