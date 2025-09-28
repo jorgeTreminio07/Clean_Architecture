@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3e0TWj2rqQ=",
+  "dgSpecHash": "z3nE1Q3YDaQ=",
   "success": true,
-  "projectFilePath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
+  "projectFilePath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JET\\.nuget\\packages\\ardalis.result\\10.1.0\\ardalis.result.10.1.0.nupkg.sha512",
     "C:\\Users\\JET\\.nuget\\packages\\ardalis.specification\\9.2.0\\ardalis.specification.9.2.0.nupkg.sha512",

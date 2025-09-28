@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj": {}
+    "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj": {}
   },
   "projects": {
-    "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj": {
+    "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj",
+        "projectUniqueName": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj",
         "projectName": "MyApp.Application",
-        "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj",
+        "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj",
         "packagesPath": "C:\\Users\\JET\\.nuget\\packages\\",
-        "outputPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\obj\\",
+        "outputPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj": {
-                "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj"
+              "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj": {
+                "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj"
               }
             }
           }
@@ -95,18 +95,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj": {
+    "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
+        "projectUniqueName": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
         "projectName": "MyApp.Domain",
-        "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
+        "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
         "packagesPath": "C:\\Users\\JET\\.nuget\\packages\\",
-        "outputPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\obj\\",
+        "outputPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -170,18 +170,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj": {
+    "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
+        "projectUniqueName": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
         "projectName": "MyApp.Infrastructure",
-        "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
+        "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\MyApp.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\JET\\.nuget\\packages\\",
-        "outputPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\obj\\",
+        "outputPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -202,8 +202,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj": {
-                "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj"
+              "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj": {
+                "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Application\\MyApp.Application.csproj"
               }
             }
           }
@@ -263,7 +263,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

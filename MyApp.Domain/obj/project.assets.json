@@ -98,11 +98,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
+      "projectUniqueName": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
       "projectName": "MyApp.Domain",
-      "projectPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
+      "projectPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\MyApp.Domain.csproj",
       "packagesPath": "C:\\Users\\JET\\.nuget\\packages\\",
-      "outputPath": "F:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\obj\\",
+      "outputPath": "D:\\desarrollo web\\Backend\\.Net\\MyApp.Api\\MyApp.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -166,7 +166,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
