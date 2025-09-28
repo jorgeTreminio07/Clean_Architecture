@@ -78,8 +78,13 @@ A **Clean Architecture** Web API template for developers who want to speed up de
    }
 
 4. Make sure PostgreSQL commands (pg_dump, psql, etc.) are added to your system PATH for backup support.
-
-5. ▶️ Running the API
-
+   
+5. perform a database migration with the command
+    ```bash
+   dotnet ef migrations add <MigrationName>
+6. apply the migration to your database:
+   ```bash
+   dotnet ef database update
+7. ▶️ Running the API
   ```bash
   dotnet run --project MyApp.Api
