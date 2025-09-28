@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen(opciones =>
     {
         Version = "v1",
         Title = "Plantilla Clean Architecture",
-        Description = "Plantilla Web API aplicando Clean Architecture para desarrolladores que no quieren reinventar la rueda y agilizar el desarrollo de sus proyectos",
+        Description = "Plantilla Web API aplicando Clean Architecture para desarrolladores que no quieren reinventar la rueda y agilizar el desarrollo de sus proyectos, La API Posee Autenticacion con JWT Bearer, Crud Usuarios, Crud Roles, Permisos de Roles, Crud Bakups(Se guardan en archivos local), Manejo de Caché (puedes migrar a redis), Almacenamiento de Archivos de forma local.",
         Contact = new Microsoft.OpenApi.Models.OpenApiContact
         {
             Email = "eduardotreminio10@gmail.com",
