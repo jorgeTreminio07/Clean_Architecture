@@ -1,57 +1,115 @@
 # Clean Architecture Web API Template - ASP.NET Core 9
+##👤 Author
+Jorge Eduardo Treminio Cruz
+📧 Email: eduardotreminio10@gmail.com
 
-A **Clean Architecture** Web API template for developers who don't want to reinvent the wheel and want to speed up project development.
+![.NET](https://img.shields.io/badge/.NET%209-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Entity Framework Core](https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=nuget&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Features
+A **Clean Architecture** Web API template for developers who want to speed up development without reinventing the wheel.
 
-- **JWT Bearer Authentication**  
-- **Password Hashing**  
-- **CRUD for Users**  
-- **CRUD for Roles**  
-- **Role Permissions**  
-- **CRUD for Backups** (local files)  
-- **Cache Management** (can be migrated to Redis)  
+---
+
+## 🚀 Features
+
+- **JWT Bearer Authentication**
+- **Password Hashing**
+- **CRUD for Users**
+- **CRUD for Roles**
+- **Role Permissions**
+- **CRUD for Backups** (local files)
+- **Cache Management** (can be migrated to Redis)
 - **Local File Storage**
 
-### Test Endpoints
+### 🔗 Test Endpoints
 
-- Many-to-many relationship: `Students - Classes`  
-- One-to-many relationship: `Employees - Offices`  
+- Many-to-many relationship: `Students - Classes`
+- One-to-many relationship: `Employees - Offices`
 
-### Design Patterns Applied
+### 🏗 Design Patterns Applied
 
-- CQRS  
-- Mediator  
-- Repository  
-- Specification  
-- Dependency Injection  
+- CQRS
+- Mediator
+- Repository
+- Specification
+- Dependency Injection
 
-### Libraries Used
+### 📚 Libraries Used
 
-- MediatR  
-- AutoMapper  
-- Ardalis.Result  
-- Ardalis.Specification  
-- Bcrypt  
+- MediatR
+- AutoMapper
+- Ardalis.Result
+- Ardalis.Specification
+- Bcrypt
 
-### Database
+### 🗄 Database
 
-- PostgreSQL  
-- Entity Framework Core  
-- Fluent API  
+- PostgreSQL
+- Entity Framework Core
+- Fluent API
 
-### Others
+### ⚙️ Others
 
 - **CORS** support
 
-## Prerequisites
+---
 
-1. **Add the connection string** in `app.development.json` so the API can connect to the database.  
-2. **Add PostgreSQL commands to your PATH** (`pg_dump`, `psql`, etc.) to allow executing backups from the API.  
+## ⚡ Getting Started
 
-## Running the API
+### ✅ Prerequisites
 
-To run the API locally, execute:
+- [.NET 9 SDK](https://dotnet.microsoft.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-```bash
-dotnet run --project MyApp.Api
+### 🔧 Setup
+
+1. Clone this repository:
+2. Add your database connection string in:
+   app.development.json
+   Example:
+   ```bash
+   {
+    "ConnectionStrings": {
+      "DefaultConnection": "Host=localhost;Port=5432;Database=MyDb;Username=postgres;Password=yourpassword"
+    }
+   }
+
+
+3. Make sure PostgreSQL commands (pg_dump, psql, etc.) are added to your system PATH for backup support.
+
+4. ▶️ Running the API
+
+Example:
+  ```bash
+  dotnet run --project MyApp.Api
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
