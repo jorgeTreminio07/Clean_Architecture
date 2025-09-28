@@ -5,8 +5,16 @@
 - Linkedln: https://www.linkedin.com/in/eduardo-treminio-b02b81323/
 
 ![.NET](https://img.shields.io/badge/.NET%209-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Entity Framework Core](https://img.shields.io/badge/Entity%20Framework%20Core-512BD4?style=for-the-badge&logo=nuget&logoColor=white)
+![MediatR](https://img.shields.io/badge/MediatR-FF6C37?style=for-the-badge&logo=nuget&logoColor=white)
+![AutoMapper](https://img.shields.io/badge/AutoMapper-FF5733?style=for-the-badge&logo=nuget&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![BCrypt](https://img.shields.io/badge/BCrypt-00BFFF?style=for-the-badge&logo=lock&logoColor=white)
+![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-4CAF50?style=for-the-badge&logo=archlinux&logoColor=white)
+![CQRS](https://img.shields.io/badge/CQRS-FF9800?style=for-the-badge&logo=databricks&logoColor=white)
+![Redis Ready](https://img.shields.io/badge/Cache%20Ready%20(Redis)-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 A **Clean Architecture** Web API template for developers who want to speed up development without reinventing the wheel.
 
