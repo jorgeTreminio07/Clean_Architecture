@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using MyApp.Application.Commands.Backups;
 using MyApp.Application.Commands.Clase;
 using MyApp.Application.Queries.Backups;
@@ -15,12 +16,18 @@ namespace MyApp.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public BackupController(IMediator mediator)
+        private readonly IOutputCacheStore _outputCacheStore;
+
+        private const string cache = "obtener-backups";
+
+        public BackupController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
         [HttpGet]
+        [OutputCache(Tags = [cache])]
         [Authorize(Policy = "GetBackup")]
         public async Task<IActionResult> Get()
         {
@@ -47,6 +54,7 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.ValidationErrors);
             }
 
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
             //return CreatedAtRoute("GetClaseById", new { Id = result.Value.Id }, new
             //{
@@ -68,7 +76,7 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.Errors);
             }
 
-
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
 
@@ -86,7 +94,7 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.Errors);
             }
 
-
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
     }

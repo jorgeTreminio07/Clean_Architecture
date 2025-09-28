@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using MyApp.Application.Commands.Employee;
 using MyApp.Application.Dtos.Employee;
 using MyApp.Application.Queries.Employees;
@@ -15,6 +16,10 @@ namespace MyApp.Api.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IMediator _mediator;
+
+        private readonly IOutputCacheStore _outputCacheStore;
+
+        private const string Cache = "obtener-employees";
 
         public EmployeesController(IMediator mediator)
         {
@@ -36,6 +41,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Tags = [Cache])]
         [Authorize(Policy = "GetEmployees")]
         public async Task<IActionResult> Get()
         {
@@ -56,6 +62,8 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+
+            await _outputCacheStore.EvictByTagAsync(Cache, default);
             return CreatedAtRoute("GetEmployeeById", new { id = result.Value.Id }, new
             {
                 Employee = result.Value,
@@ -77,6 +85,7 @@ namespace MyApp.Api.Controllers
                 return NotFound(result.Errors); // muestra el error del catch en el CommandHandler
             }
 
+            await _outputCacheStore.EvictByTagAsync(Cache, default);
             return Ok(result.Value);
         }
 
@@ -96,6 +105,7 @@ namespace MyApp.Api.Controllers
                 return NotFound(result.Errors);
             }
 
+            await _outputCacheStore.EvictByTagAsync(Cache, default);
             return Ok(result.Value);
         }
 

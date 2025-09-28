@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using MyApp.Application.Commands.Estudiante;
 using MyApp.Application.Dtos.Estudiante;
 using MyApp.Application.Queries.Estudiante;
@@ -14,10 +15,14 @@ namespace MyApp.Api.Controllers
     public class EstudianteController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IOutputCacheStore _outputCacheStore;
 
-        public EstudianteController(IMediator mediator)
+        private const string cache = "obtener-estudiantes";
+
+        public EstudianteController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
         [HttpGet("{id:Guid}", Name = "GetEstudianteById")]
@@ -34,6 +39,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Tags = [cache])]
         [Authorize(Policy = "GetEstudiante")]
         public async Task<IActionResult> Get()
         {
@@ -56,6 +62,8 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return CreatedAtRoute("GetEstudianteById", new { Id = result.Value.Id }, new
             {
                 Estudiante = result.Value,
@@ -72,6 +80,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(new { message = "Estudiante Editado correctamente", result.Value });
         }
 
@@ -89,6 +98,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.Errors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(new { message = "Estudiante eliminado correctamente", result.Value });
         }
     }

@@ -6,6 +6,7 @@ using Ardalis.Result;
 using MyApp.Application.Dtos.Office;
 using MyApp.Application.Commands.Office;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.OutputCaching;
 
 namespace MyApp.Api.Controllers
 {
@@ -14,10 +15,14 @@ namespace MyApp.Api.Controllers
     public class OfficeController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IOutputCacheStore _outputCacheStore;
 
-        public OfficeController(IMediator mediator)
+        private const string cache = "obtener-offices";
+
+        public OfficeController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
         [HttpGet("{id:Guid}", Name = "GetOfficeById")]
@@ -34,6 +39,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Tags = [cache])]
         [Authorize(Policy = "GetOffice")]
         public async Task<IActionResult> Get()
         {
@@ -56,6 +62,7 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.ValidationErrors);
             }
 
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return CreatedAtRoute("GetOfficeById", new { Id = result.Value.Id }, new
             {
                 Office = result.Value,
@@ -78,6 +85,7 @@ namespace MyApp.Api.Controllers
                 return NotFound(result.Errors);
             }
 
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
 
@@ -97,6 +105,7 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.Errors);
             }
 
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
     }

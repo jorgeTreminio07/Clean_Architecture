@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using MyApp.Application.Commands.Rol;
 using MyApp.Application.Dtos.Rol;
@@ -17,13 +18,17 @@ namespace MyApp.Api.Controllers
     public class RolController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private const string cache = "obtener-Roles";
+        private readonly IOutputCacheStore _outputCacheStore;
 
-        public RolController(IMediator mediator)
+        public RolController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
         [HttpGet]
+        [OutputCache(Tags = [cache])]
         [Authorize(Policy = "GetRol")]
         public async Task<IActionResult> Get()
         {
@@ -45,6 +50,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
 
@@ -58,6 +64,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
 
@@ -75,6 +82,7 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.Errors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
     }

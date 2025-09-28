@@ -12,7 +12,7 @@ var configuracion = builder.Configuration;
 //cache
 builder.Services.AddOutputCache(options =>
 {
-    options.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30); // 15 segundos
+    options.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30); // 30 segundos
 });
 
 builder.Services.AddControllers();

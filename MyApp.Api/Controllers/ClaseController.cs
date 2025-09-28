@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using MyApp.Application.Commands.Clase;
 using MyApp.Application.Dtos.Clase;
 using MyApp.Application.Queries.Clase;
@@ -16,9 +17,14 @@ namespace MyApp.Api.Controllers
     {
         private readonly IMediator _mediator;
 
-        public ClaseController(IMediator mediator)
+        private readonly IOutputCacheStore _outputCacheStore;
+
+        private const string cache = "obtener-clases";
+
+        public ClaseController(IMediator mediator, IOutputCacheStore outputCacheStore)
         {
             this._mediator = mediator;
+            this._outputCacheStore = outputCacheStore;
         }
 
 
@@ -35,6 +41,7 @@ namespace MyApp.Api.Controllers
         }
 
         [HttpGet]
+        [OutputCache(Tags = [cache])]
         [Authorize(Policy = "GetClase")]
         public async Task<IActionResult> Get()
         {
@@ -56,6 +63,8 @@ namespace MyApp.Api.Controllers
             {
                 return BadRequest(result.ValidationErrors);
             }
+
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return CreatedAtRoute("GetClaseById", new { Id = result.Value.Id }, new
             {
                 Clase = result.Value,
@@ -72,6 +81,8 @@ namespace MyApp.Api.Controllers
                 return BadRequest(result.ValidationErrors);
 
             }
+
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
 
@@ -89,6 +100,7 @@ namespace MyApp.Api.Controllers
             {
                 return NotFound(result.Errors);
             }
+            await _outputCacheStore.EvictByTagAsync(cache, default);
             return Ok(result.Value);
         }
     }
