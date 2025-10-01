@@ -29,6 +29,7 @@ A **Clean Architecture** Web API template for developers who want to speed up de
 - **CRUD for Backups** (local files)
 - **Cache Management** (can be migrated to Redis)
 - **Local File Storage**
+- **Soft Delete**
 
 ### 🔗 Test Endpoints
 
